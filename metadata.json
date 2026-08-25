@@ -1,0 +1,6 @@
+{
+  "name": "Blockchain Land Registry",
+  "description": "Blockchain-based land registry & property ownership system with smart contracts, digital signatures, real-time authority verification, and privacy compliance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
