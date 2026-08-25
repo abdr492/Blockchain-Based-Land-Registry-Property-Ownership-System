@@ -13,43 +13,55 @@
   <a href="https://vitejs.dev/"><img src="https://img.shields.io/badge/Vite-6.2.3-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" /></a>
   <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind_CSS-4.1-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" /></a>
   <a href="https://deepmind.google/technologies/gemini/"><img src="https://img.shields.io/badge/Gemini_AI-3.6_Flash-8E75B2?style=for-the-badge&logo=google-gemini&logoColor=white" alt="Gemini AI" /></a>
-  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-success?style=for-the-badge" alt="MIT License" /></a>
+  <a href="https://www.linkedin.com/in/abdulrahman-anas"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
 </p>
 
 <p align="center">
-  <a href="#-key-features">Key Features</a> •
+  <a href="#-overview">Overview</a> •
+  <a href="#-features">Features</a> •
   <a href="#-system-architecture">Architecture</a> •
   <a href="#-quick-start">Quick Start</a> •
-  <a href="#-smart-contract">Smart Contract</a> •
-  <a href="#-automated-tests">Testing</a> •
-  <a href="#-documentation">Documentation</a> •
-  <a href="#-license">License</a>
+  <a href="#-repository-structure">Structure</a> •
+  <a href="#-license">License</a> •
+  <a href="#-author--connect">Connect</a>
 </p>
 
 ---
 
 </div>
 
-## 📌 Executive Overview
+## 📌 Overview
 
-Traditional land registry databases suffer from centralized points of failure, administrative corruption risks, slow manual due diligence, double-selling fraud, and unverified physical deed manipulation.
+Traditional land administration systems face critical challenges: centralized single-point-of-failure architectures, slow multi-week manual due diligence, unauthorized record manipulation, and double-sale fraud.
 
-This project delivers a complete, production-grade Web3 prototype simulating **tamper-evident cadastral parcel registration**, **decoupled authority verification**, **peer-to-peer ownership conveyance**, and **active lien/dispute locks**. Physical deeds and survey maps are secured off-chain via SHA-256 cryptographic digests, while the Solidity smart contract manages immutable ownership state and complete transfer audit logs.
+The **Blockchain-Based Land Registry & Property Ownership System** is a decentralized application that brings end-to-end transparency, immutability, and automation to land records. By combining EVM smart contracts with cryptographic document hashing and artificial intelligence, the platform ensures that land titles cannot be covertly edited, forged, or transferred without proper role-based authorizations.
 
 ---
 
-## ✨ Key Features
+## ✨ Features
 
-| Feature | Description |
-|:---|:---|
-| 🛡️ **Role-Based Access Control (RBAC)** | Strict administrative separation of concerns between `Admin`, `Land Registrar`, `Cadastral Surveyor`, and `Authorized Notary`. |
-| 📜 **Cadastral Title Modeling** | 16-field on-chain property data model tracking parcel codes, GPS districts, zoning, freehold ownership, and verification state. |
-| 🔒 **Automated Lien & Dispute Locks** | Autonomous smart contract guards strictly prevent title transfers while active mortgage liens, municipal taxes, or boundary disputes exist. |
-| 🔍 **Off-Chain Hash Integrity** | Computes SHA-256 digests of physical survey documents, ensuring instant mathematical detection of altered or forged deeds (`[TAMPER DETECTED]`). |
-| 🗺️ **Interactive GIS Cadastral Map** | Real-time SVG polygon rendering with status color codes (Verified, Pending, Encumbered, Disputed) and satellite orthophoto mode. |
-| 🤖 **Google Gemini 3.6 Flash AI** | Live AI legal engine for automated title integrity conflict audits, plain-English legal explainers for citizens, and cadastral market valuations. |
-| 🦊 **Dual Web3 & Persona Mode** | Connect via live **MetaMask** on local EVM (Chain ID: `31337`), or switch instantly between 4 simulated personas (Citizen, Registrar, Notary, Auditor). |
-| 🧪 **100% Automated Test Coverage** | 20 comprehensive Hardhat unit tests covering all edge cases, access control invariants, and state transitions. |
+### 🛡️ Decentralized Cadastral Registry
+* **Role-Based Access Control (RBAC)**: Strict permission boundaries for `Admin`, `Land Registrar`, `Cadastral Surveyor`, and `Authorized Notary`.
+* **Decoupled Verification Pipeline**: Registration and legal title verification are treated as independent steps, mirroring real-world land administration standards.
+* **Immutable Title History**: Every ownership transfer, boundary confirmation, and mortgage attachment is permanently recorded on-chain.
+
+### 🔒 Autonomous Security & Lien Guards
+* **Mortgage & Lien Enforcement**: Smart contracts automatically lock title transfers when active bank mortgages or tax liens exist.
+* **Boundary Dispute Lock**: Instant dispute flagging halts property sales until a certified surveyor and registrar issue a resolution.
+* **Off-Chain Cryptographic Integrity**: Physical title deeds and survey reports are hashed using SHA-256 (`[TAMPER DETECTED]`), ensuring any forged or modified document is immediately rejected.
+
+### 🗺️ Geospatial GIS Mapping & Data Privacy
+* **Interactive Cadastral Map**: Visualizes land plots as interactive SVG vector polygons with real GPS coordinate overlays, status color codes, and satellite orthophoto mode.
+* **GDPR Article 17 Compliance**: Sensitive citizen personal identifiable information (PII) is encrypted off-chain with AES-256-GCM, maintaining privacy while preserving zero-knowledge on-chain validity.
+
+### 🤖 Google Gemini 3.6 Flash AI Integration
+* **Plain-English Deed Explainer**: Translates complex legal covenants, rights, and smart contract triggers into clear, accessible language for citizens.
+* **AI Title Integrity Audit**: Evaluates chain of custody, zoning constraints, and legal risks, generating instant compliance scores and recommendations.
+* **Cadastral Market Valuation**: AI appraisal evaluating regional land appreciation, tax duty assessments, and market comparables.
+
+### 🦊 Dual Execution: Live Web3 & Multi-Persona Mode
+* **MetaMask Web3 Bridge**: Connect via live MetaMask on local Hardhat EVM (Chain ID: `31337`) with 1-click network switching.
+* **Simulated Persona Sandbox**: Seamlessly toggle between 4 personas (Citizen, Registrar, Notary, Auditor) for rapid testing and demonstrations without requiring testnet gas.
 
 ---
 
@@ -139,112 +151,6 @@ Open **[http://localhost:3000](http://localhost:3000)** in your web browser.
 
 ---
 
-## 📜 Smart Contract Specification (`LandRegistry.sol`)
-
-The `contracts/LandRegistry.sol` contract is compiled with Solidity `0.8.20` using the Yul Intermediate Representation (`viaIR: true`) and 200 optimizer runs.
-
-```solidity
-struct Property {
-    string propertyId;        // Unique parcel ID (e.g. "PROP-NY-2024-401")
-    string titleNumber;       // Sovereign title deed code (e.g. "TIT-NY-8892401")
-    string parcelId;          // Cadastral plot code (e.g. "CAD-SEC4-LT12")
-    string cadastralDistrict; // Municipal administrative jurisdiction
-    string physicalAddress;   // Full street address
-    uint256 areaSqMeters;     // Land area in square meters
-    string zoning;            // "Residential", "Commercial", "Agricultural", etc.
-    address currentOwner;     // Current owner wallet address
-    address previousOwner;    // Previous owner wallet address
-    string documentHash;      // SHA-256 hash of original deed
-    string ipfsDeedCid;       // Content identifier on IPFS
-    bool isVerified;          // Authority approval status
-    PropertyStatus status;    // REGISTERED, VERIFIED, TRANSFERRED, IN_DISPUTE, ENCUMBERED
-    uint256 registeredAt;     // Registration timestamp
-    uint256 lastTransferredAt;// Last conveyance timestamp
-    bool exists;              // Existence flag
-}
-```
-
-### Core Functions
-
-| Category | Function | Access | Description |
-|:---|:---|:---|:---|
-| **Roles** | `setRegistrar(address, bool)` | `onlyAdmin` | Grants/revokes Land Registrar municipal permissions. |
-| **Roles** | `setNotary(address, bool)` | `onlyAdmin` | Grants/revokes Authorized Notary permissions. |
-| **Roles** | `setSurveyor(address, bool)` | `onlyAdmin` | Grants/revokes Cadastral Surveyor permissions. |
-| **Registration** | `registerProperty(...)` | `onlyRegistrarRole` | Registers new parcel with SHA-256 document hash. |
-| **Verification** | `verifyProperty(propertyId, cid)` | `onlyNotary/Surveyor` | Decoupled verification confirming survey and legal covenants. |
-| **Conveyance** | `transferOwnership(...)` | `onlyPropertyOwner` | Conveys title deed; enforces zero-address, lien, and dispute guards. |
-| **Liens** | `addEncumbrance(...)` | `onlyNotaryRole` | Attaches mortgage or tax lien; automatically locks transfer status. |
-| **Liens** | `releaseEncumbrance(...)` | `onlyNotaryRole` | Discharges active lien; restores verified status. |
-| **Disputes** | `flagDispute(propertyId, reason)` | Owner / Registrar | Flags boundary contest; halts transfer until resolved. |
-| **Disputes** | `resolveDispute(propertyId, notes)`| `onlyRegistrarRole` | Settles boundary dispute with on-chain resolution notes. |
-
----
-
-## 🧪 Automated Unit Testing
-
-Run the full **20-case test suite** with Mocha, Chai, and Hardhat:
-
-```bash
-npm run hardhat:test
-```
-
-```text
-  LandRegistry Smart Contract Comprehensive Test Suite
-    ✔ 1. Should deploy successfully with the deployer set as admin and default roles assigned
-    ✔ 2. Should allow admin to grant and revoke registrar, notary, and surveyor roles
-    ✔ 3. Should revert if non-admin attempts to grant or revoke roles
-    ✔ 4. Should allow authorized Registrar to register a new parcel and emit PropertyRegistered
-    ✔ 5. Should revert when registering a duplicate property ID
-    ✔ 6. Should revert when registering with zero address as owner
-    ✔ 7. Should revert when registering with area equal to zero
-    ✔ 8. Should revert when unauthorized user attempts to register a property
-    ✔ 9. Should allow authorized Notary to verify registered property and update status
-    ✔ 10. Should revert if property is verified more than once
-    ✔ 11. Should revert when verifying a non-existent property
-    ✔ 12. Should revert when unauthorized caller attempts to verify property
-    ✔ 13. Should allow current owner to transfer verified title to buyer and emit OwnershipTransferred
-    ✔ 14. Should update currentOwner, previousOwner, and owner property mappings after transfer
-    ✔ 15. Should revert when transferring an unverified property
-    ✔ 16. Should revert when non-owner (or previous owner) tries to transfer property
-    ✔ 17. Should revert when transferring to zero address
-    ✔ 18. Should revert when transferring to current owner itself
-    ✔ 19. Should block transfer when an active mortgage/lien encumbrance exists, and permit transfer after discharge
-    ✔ 20. Should block transfer when a boundary dispute is active, and permit transfer once resolved
-
-  20 passing (2s)
-```
-
----
-
-## 🔐 Off-Chain Document Tamper-Detection Demo
-
-To demonstrate cryptographic tamper detection of physical deed files:
-
-```bash
-node scripts/hash-document.cjs
-```
-
-```text
-================================================================
-  OFF-CHAIN DOCUMENT HASH INTEGRITY & TAMPER DETECTION DEMO
-================================================================
-
-1. Original Document Path: sample_documents/property_001.json
-   Original SHA-256 Hash : 0xe3d38838a495ef125635b5acae677cbec990a7896640fca0a492500fbc778832
-
-2. Tampered Document Created: hashes/property_001_tampered.json
-   Tampered SHA-256 Hash   : 0xf5ec08fe596e4db983df097e3b94146c4b9b94919149e6eedac641fb0047385e
-
-3. Cryptographic Verification:
-   Original == Tampered?   : false
-   [TAMPER DETECTED] The modified document produces a completely different hash!
-   Smart Contract on-chain record will immediately reject this forged deed.
-================================================================
-```
-
----
-
 ## 📁 Repository Structure
 
 ```text
@@ -281,19 +187,6 @@ Blockchain-Based-Land-Registry-Property-Ownership-System/
 
 ---
 
-## 📚 Supplementary Documentation
-
-| Document | Purpose |
-|:---|:---|
-| [System Architecture](docs/architecture.md) | Full 3-tier system architecture diagrams, sequence flows, and permission tables. |
-| [Blockchain Concepts](docs/concepts.md) | Comprehensive reference explaining 20+ blockchain & smart contract concepts. |
-| [Security & Threat Model](docs/security.md) | In-depth threat matrix (13 mitigations), GIGO boundary analysis, and legal constraints. |
-| [Virtual Simulation Guide](docs/simulation-guide.md) | 15-step walkthrough for testing on Remix IDE with 4 test accounts. |
-| [Academic Project Report](reports/project-report.md) | Formal course report formatted with Abstract, Architecture, Methodology, and Results. |
-| [Technical Interview Prep](docs/interview-prep.md) | Top 10 predicted placement interview questions and model answers. |
-
----
-
 ## ⚖️ Educational Disclaimer
 
 > [!NOTE]
@@ -301,8 +194,13 @@ Blockchain-Based-Land-Registry-Property-Ownership-System/
 
 ---
 
-## 👨‍💻 Author & Attribution
+## 👨‍💻 Author & Connect
 
-* **Developer**: [abdr492](https://github.com/abdr492)
-* **Project**: Blockchain-Based Land Registry & Property Ownership System
-* **License**: [MIT License](LICENSE)
+* **Author**: Abdulrahman Anas
+* **GitHub**: [@abdr492](https://github.com/abdr492)
+* **LinkedIn**: [linkedin.com/in/abdulrahman-anas](https://www.linkedin.com/in/abdulrahman-anas)
+
+---
+
+## 📄 License
+This project is open-source and available under the [MIT License](LICENSE).
