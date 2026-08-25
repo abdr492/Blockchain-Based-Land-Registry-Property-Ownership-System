@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build:client",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/api/health",
+      "destination": "/api/health.ts"
+    },
+    {
+      "source": "/api/ai/audit-title",
+      "destination": "/api/ai/audit-title.ts"
+    },
+    {
+      "source": "/api/ai/explain-deed",
+      "destination": "/api/ai/explain-deed.ts"
+    },
+    {
+      "source": "/api/ai/evaluate-valuation",
+      "destination": "/api/ai/evaluate-valuation.ts"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

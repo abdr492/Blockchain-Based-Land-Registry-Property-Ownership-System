@@ -141,6 +141,20 @@ Open **[http://localhost:3000](http://localhost:3000)** in your web browser.
 
 ---
 
+## ⚡ Deploy to Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fabdr492%2FBlockchain-Based-Land-Registry-Property-Ownership-System&env=GEMINI_API_KEY&envDescription=Google%20Gemini%20API%20Key%20for%20AI%20Deed%20Audits%20and%20Valuations)
+
+### Manual Deployment via Vercel Dashboard
+1. Go to **[vercel.com/new](https://vercel.com/new)** and import your GitHub repository: `abdr492/Blockchain-Based-Land-Registry-Property-Ownership-System`.
+2. **Framework Preset**: `Vite` (automatically detected).
+3. **Build Command**: `npm run build` (or `vite build`).
+4. **Output Directory**: `dist`.
+5. **Environment Variables**: Add `GEMINI_API_KEY` with your Google Gemini API key.
+6. Click **Deploy**! All frontend routes and `/api/*` serverless functions are configured automatically via `vercel.json`.
+
+---
+
 ## 📁 Repository Structure
 
 ```text
