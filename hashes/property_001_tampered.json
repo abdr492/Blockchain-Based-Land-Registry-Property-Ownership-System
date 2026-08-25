@@ -1,0 +1,42 @@
+{
+  "propertyId": "PROP-NY-2024-401",
+  "titleNumber": "TIT-NY-8892401",
+  "surveyNumber": "CAD-SEC4-LT12",
+  "cadastralDistrict": "Hudson Valley North District (Sec. 04)",
+  "physicalAddress": "742 Evergreen Terrace, Springfield Heights",
+  "city": "Springfield",
+  "stateDistrict": "New York Central",
+  "areaSqMeters": 850,
+  "zoning": "Residential",
+  "initialOwner": {
+    "name": "Malicious Impersonator (Modified Deed)",
+    "walletAddress": "0x000000000000000000000000000000000000dEaD",
+    "ownershipType": "Freehold"
+  },
+  "cadastralBoundaries": [
+    {
+      "vertex": "Northeast",
+      "latitude": 41.2891,
+      "longitude": -73.9841
+    },
+    {
+      "vertex": "Southeast",
+      "latitude": 41.2895,
+      "longitude": -73.9835
+    },
+    {
+      "vertex": "Southwest",
+      "latitude": 41.2888,
+      "longitude": -73.9831
+    },
+    {
+      "vertex": "Northwest",
+      "latitude": 41.2884,
+      "longitude": -73.9837
+    }
+  ],
+  "encumbranceStatus": "Clear / No Active Liens",
+  "registrationAuthority": "Department of Land Administration & Title Deeds",
+  "chiefRegistrar": "Marcus Sterling",
+  "disclaimer": "EDUCATIONAL PROTOTYPE: This synthetic land record is generated for blockchain course validation."
+}
